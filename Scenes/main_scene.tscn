@@ -4,5 +4,5 @@
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_8jo0f")
