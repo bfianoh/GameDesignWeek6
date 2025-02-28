@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://ban64dkuwdcxw"]
+[gd_scene load_steps=3 format=3 uid="uid://ban64dkuwdcxw"]
 
 [ext_resource type="Texture2D" uid="uid://c8kx0faqe0kxh" path="res://Assets/woodBig.png" id="1_8jo0f"]
+[ext_resource type="PackedScene" uid="uid://eh0pkgt2drw5" path="res://Scenes/fruit.tscn" id="2_7jbdv"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node"]
 
 [node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_8jo0f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Fruit" parent="." instance=ExtResource("2_7jbdv")]
+position = Vector2(0, 400)
+inertia = 1.0
