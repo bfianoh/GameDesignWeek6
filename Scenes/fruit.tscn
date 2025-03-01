@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://eh0pkgt2drw5"]
+[gd_scene load_steps=4 format=3 uid="uid://eh0pkgt2drw5"]
 
 [ext_resource type="Script" path="res://Scripts/fruit_controller.gd" id="1_g6puy"]
-[ext_resource type="Texture2D" uid="uid://bjrfwhih5du3a" path="res://Assets/fruits.png" id="2_kgvd7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qw15t"]
-atlas = ExtResource("2_kgvd7")
-region = Rect2(0, 0, 16, 16)
+[ext_resource type="Texture2D" uid="uid://by30i4x3u74y" path="res://Assets/fruits.png" id="2_kgvd7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnn7w"]
 radius = 8.0
@@ -19,7 +15,9 @@ launch_force = 1800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
-texture = SubResource("AtlasTexture_qw15t")
+texture = ExtResource("2_kgvd7")
+hframes = 10
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(8, 8)
