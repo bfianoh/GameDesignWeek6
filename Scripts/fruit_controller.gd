@@ -1,7 +1,10 @@
 extends RigidBody2D
 
+signal sliced
+
 @export
-var launch_force = 2000
+var launch_force: float
+var mouse_speed: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +16,18 @@ func _ready() -> void:
 	var offset = Vector2(randf()/150, 0) * -sign(launch_dir)
 	self.apply_impulse(launch_vector*launch_force*randf_range(0.9, 1.1), offset)
 
+# Called every frame
+func _process(delta) -> void:
+	mouse_speed = 0
+
+# Called whenever any event fires
+func _unhandled_input(event) -> void:
+	if event is InputEventMouseMotion:
+		mouse_speed = event.velocity.length_squared()
+
+# Recieves the mouse_entered signal from the RigidBody2D
 func _on_mouse_entered() -> void:
-	hide()
-	$CollisionShape2D.set_deferred("disabled", true)
-	# TODO: detect mouse speed, cut effects, add points
+	if mouse_speed > 1000:
+		sliced.emit()
+		# TODO: cut effects
+		self.queue_free()

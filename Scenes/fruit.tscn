@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://by30i4x3u74y" path="res://Assets/fruits.png" id="2_kgvd7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnn7w"]
-radius = 8.0
+radius = 9.0
 
 [node name="Fruit" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 2.3
 inertia = 1.0
 script = ExtResource("1_g6puy")
-launch_force = 1800
+launch_force = 1800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
