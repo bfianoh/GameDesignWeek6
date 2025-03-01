@@ -8,10 +8,10 @@ radius = 9.0
 
 [node name="Fruit" type="RigidBody2D"]
 collision_mask = 0
-gravity_scale = 2.3
+gravity_scale = 2.0
 inertia = 1.0
 script = ExtResource("1_g6puy")
-launch_force = 1800.0
+launch_force = 1600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)

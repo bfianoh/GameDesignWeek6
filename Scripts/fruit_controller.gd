@@ -12,7 +12,7 @@ func _ready() -> void:
 	input_pickable = true
 	$Sprite2D.set_frame(randi() % 10)
 	
-	var launch_dir = randf_range(-0.25, 0.25)
+	var launch_dir = randf_range(-0.15, 0.15)
 	var launch_vector = Vector2(launch_dir, -1)
 	var offset = Vector2(randf()/150, 0) * -sign(launch_dir)
 	self.apply_impulse(launch_vector*launch_force*randf_range(0.9, 1.1), offset)
@@ -31,7 +31,7 @@ func _unhandled_input(event) -> void:
 
 # Recieves the mouse_entered signal from the RigidBody2D
 func _on_mouse_entered() -> void:
-	if mouse_speed > 1000:
+	if mouse_speed > 300:
 		sliced.emit()
 		# TODO: slice effects
 		self.queue_free()
