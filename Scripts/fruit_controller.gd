@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 signal sliced
+signal missed
 
 @export
 var launch_force: float
@@ -19,6 +20,9 @@ func _ready() -> void:
 # Called every frame
 func _process(delta) -> void:
 	mouse_speed = 0
+	if position.y > 460:
+		missed.emit()
+		self.queue_free()
 
 # Called whenever any event fires
 func _unhandled_input(event) -> void:
