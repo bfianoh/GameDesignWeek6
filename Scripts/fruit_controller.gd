@@ -29,5 +29,5 @@ func _unhandled_input(event) -> void:
 func _on_mouse_entered() -> void:
 	if mouse_speed > 1000:
 		sliced.emit()
-		# TODO: cut effects
+		# TODO: slice effects
 		self.queue_free()

@@ -16,6 +16,7 @@ var points: int
 # Recieves the sliced signal from the fruits
 func _on_fruit_sliced() -> void:
 	points += 1
+	$ScoreLabel.text = "%03d" % points
 
 # Receives the timeout signal from the FruitTimer
 func _on_fruit_timer_timeout() -> void:
