@@ -76,7 +76,7 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_font_sizes/font_size = 150
 text = "Game over!"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ToggleBar" type="ColorRect" parent="."]
 z_index = 10
 offset_left = -576.0
 offset_top = 384.0
@@ -84,7 +84,7 @@ offset_right = 576.0
 offset_bottom = 466.0
 color = Color(0.76, 0.623833, 0.4332, 1)
 
-[node name="SoundToggle" type="TextureButton" parent="ColorRect"]
+[node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 72.0
@@ -94,7 +94,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
-[node name="Label" type="Label" parent="ColorRect/SoundToggle"]
+[node name="Label" type="Label" parent="ToggleBar/SoundToggle"]
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -105,7 +105,7 @@ theme_override_font_sizes/font_size = 24
 text = "Sound Effects"
 horizontal_alignment = 1
 
-[node name="SliceToggle" type="TextureButton" parent="ColorRect"]
+[node name="SliceToggle" type="TextureButton" parent="ToggleBar"]
 offset_left = 295.0
 offset_top = 7.0
 offset_right = 359.0
@@ -115,7 +115,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
-[node name="Label" type="Label" parent="ColorRect/SliceToggle"]
+[node name="Label" type="Label" parent="ToggleBar/SliceToggle"]
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -126,7 +126,7 @@ theme_override_font_sizes/font_size = 24
 text = "Fruit Slices"
 horizontal_alignment = 1
 
-[node name="SplatToggle" type="TextureButton" parent="ColorRect"]
+[node name="SplatToggle" type="TextureButton" parent="ToggleBar"]
 offset_left = 582.0
 offset_top = 7.0
 offset_right = 646.0
@@ -136,7 +136,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
-[node name="Label" type="Label" parent="ColorRect/SplatToggle"]
+[node name="Label" type="Label" parent="ToggleBar/SplatToggle"]
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -147,7 +147,7 @@ theme_override_font_sizes/font_size = 24
 text = "Splat Effects"
 horizontal_alignment = 1
 
-[node name="BladeToggle" type="TextureButton" parent="ColorRect"]
+[node name="BladeToggle" type="TextureButton" parent="ToggleBar"]
 offset_left = 869.0
 offset_top = 7.0
 offset_right = 933.0
@@ -157,7 +157,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
-[node name="Label" type="Label" parent="ColorRect/BladeToggle"]
+[node name="Label" type="Label" parent="ToggleBar/BladeToggle"]
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -169,3 +169,7 @@ text = "Blade Trail"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
+[connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/SliceToggle" to="." method="_on_slice_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/SplatToggle" to="." method="_on_splat_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/BladeToggle" to="." method="_on_blade_toggle_toggled"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfp8u0hn14a6"]
+
+[ext_resource type="Texture2D" uid="uid://ucw5aki3ojox" path="res://Assets/fruits.png" id="1_elvg0"]
+[ext_resource type="Script" path="res://Scripts/fruit_slice.gd" id="1_wpno8"]
+
+[node name="FruitSlice" type="RigidBody2D"]
+gravity_scale = 3.0
+script = ExtResource("1_wpno8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(7, 7)
+texture = ExtResource("1_elvg0")
+hframes = 10
+vframes = 2
+frame = 10
