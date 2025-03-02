@@ -20,17 +20,17 @@ var wave_sizes: Array = [1, 1, 2, 2, 2, 3, 3, 3, 4]
 # Ends the game when you run out of lives
 func game_over() -> void:
 	$FruitTimer.stop()
-	$DeathLabel.set_visible(true)
+	$DeathText.set_visible(true)
 
 # Sets the lives value and the ingame display
 func set_lives(val) -> void:
 	lives = val
-	$LivesLabel.text = "❤️".repeat(max(val, 0))
+	$LivesDisplay.text = "❤️".repeat(max(val, 0))
 
 # Recieves the sliced signal from the fruits
 func _on_fruit_sliced() -> void:
 	points += 1
-	$ScoreLabel.text = "%03d" % points
+	$ScoreDisplay.text = "%03d" % points
 
 # Recieves the missed signal from the fruits
 func _on_fruit_missed() -> void:
