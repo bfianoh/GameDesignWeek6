@@ -10,8 +10,6 @@ var mouse_speed: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	input_pickable = true
-	$Sprite2D.set_frame(randi() % 10)
-	
 	var launch_dir = randf_range(-0.15, 0.15)
 	var launch_vector = Vector2(launch_dir, -1)
 	var offset = Vector2(randf()/150, 0) * -sign(launch_dir)
@@ -24,6 +22,10 @@ func _process(delta) -> void:
 		missed.emit()
 		self.queue_free()
 
+# Called when this scene is sliced
+func slice_fx() -> void:
+	pass
+
 # Called whenever any event fires
 func _unhandled_input(event) -> void:
 	if event is InputEventMouseMotion:
@@ -31,7 +33,7 @@ func _unhandled_input(event) -> void:
 
 # Recieves the mouse_entered signal from the RigidBody2D
 func _on_mouse_entered() -> void:
-	if mouse_speed > 300:
+	if mouse_speed > 0:
 		sliced.emit()
-		# TODO: slice effects
+		slice_fx()
 		self.queue_free()

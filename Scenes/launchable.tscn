@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://eh0pkgt2drw5"]
+
+[ext_resource type="Script" path="res://Scripts/launchable.gd" id="1_g6puy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnn7w"]
+radius = 9.0
+
+[node name="Launchable" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 1.8
+inertia = 1.0
+script = ExtResource("1_g6puy")
+launch_force = 1500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_gnn7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

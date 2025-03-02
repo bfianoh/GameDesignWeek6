@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ban64dkuwdcxw"]
+[gd_scene load_steps=5 format=3 uid="uid://ban64dkuwdcxw"]
 
 [ext_resource type="Texture2D" uid="uid://c8kx0faqe0kxh" path="res://Assets/woodBig.png" id="1_8jo0f"]
 [ext_resource type="Script" path="res://Scripts/game_controller.gd" id="1_rwrkb"]
-[ext_resource type="PackedScene" uid="uid://eh0pkgt2drw5" path="res://Scenes/fruit.tscn" id="2_7jbdv"]
+[ext_resource type="PackedScene" uid="uid://c715svdpoba5g" path="res://Scenes/fruit.tscn" id="2_7jbdv"]
+[ext_resource type="PackedScene" uid="uid://bj74che7ehbc5" path="res://Scenes/bomb.tscn" id="3_sm6m7"]
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_rwrkb")
 fruit_scene = ExtResource("2_7jbdv")
+bomb_scene = ExtResource("3_sm6m7")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(1.6, 1.6)
@@ -31,6 +33,7 @@ theme_override_font_sizes/font_size = 75
 text = "000"
 
 [node name="ScoreIcon" type="Label" parent="ScoreLabel"]
+layout_mode = 0
 offset_left = -101.0
 offset_top = 26.0
 offset_right = 2.0
