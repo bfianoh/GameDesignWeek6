@@ -25,7 +25,7 @@ func game_over() -> void:
 # Sets the lives value and the ingame display
 func set_lives(val) -> void:
 	lives = val
-	$LivesLabel.text = "❤️".repeat(val)
+	$LivesLabel.text = "❤️".repeat(max(val, 0))
 
 # Recieves the sliced signal from the fruits
 func _on_fruit_sliced() -> void:
