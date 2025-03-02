@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://kfp8u0hn14a6" path="res://Scenes/fruit_slice.tscn" id="3_cosqa"]
 
 [node name="Fruit" instance=ExtResource("1_xd4u2")]
+z_index = 1
 script = ExtResource("2_ughab")
 slice_scene = ExtResource("3_cosqa")
 

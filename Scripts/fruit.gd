@@ -26,4 +26,5 @@ func slice_fx() -> void:
 			eject_vector *= -1
 	
 	if get_parent().splats:
+		# TODO: spawn splat particles, possible also static sprite
 		pass

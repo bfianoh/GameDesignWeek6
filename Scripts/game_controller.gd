@@ -52,7 +52,7 @@ func _on_bomb_sliced() -> void:
 func _on_fruit_timer_timeout() -> void:
 	for i in wave_sizes.pick_random():
 		var spawn_pos = Vector2(randf_range(-420,420), 450)
-		if randf() < 0.2:
+		if randf() < 0.15:
 			var bomb = bomb_scene.instantiate()
 			bomb.position = spawn_pos
 			bomb.sliced.connect(_on_bomb_sliced)
