@@ -171,6 +171,15 @@ theme_override_font_sizes/font_size = 24
 text = "Blade Trail"
 horizontal_alignment = 1
 
+[node name="Explosion" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 20
+offset_left = -576.0
+offset_top = -384.0
+offset_right = 576.0
+offset_bottom = 466.0
+mouse_filter = 2
+
 [connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
 [connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/SliceToggle" to="." method="_on_slice_toggle_toggled"]

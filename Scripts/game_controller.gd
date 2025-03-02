@@ -20,8 +20,9 @@ var blade: bool = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _process(delta: float) -> void:
+	var explosion = $Explosion
+	if explosion.modulate.a > 0: explosion.modulate.a -= delta * 0.7
 
 # Ends the game when you run out of lives
 func game_over() -> void:
@@ -45,6 +46,8 @@ func _on_fruit_missed() -> void:
 
 # Recieves the sliced signal from the bombs
 func _on_bomb_sliced() -> void:
+	$Explosion.modulate.a = 1
+	get_tree().call_group("Fruits","slice_fx")
 	set_lives(0)
 	game_over()
 

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/fruit.gd" id="2_ughab"]
 [ext_resource type="PackedScene" uid="uid://kfp8u0hn14a6" path="res://Scenes/fruit_slice.tscn" id="3_cosqa"]
 
-[node name="Fruit" instance=ExtResource("1_xd4u2")]
+[node name="Fruit" groups=["Fruits"] instance=ExtResource("1_xd4u2")]
 z_index = 1
 script = ExtResource("2_ughab")
 slice_scene = ExtResource("3_cosqa")

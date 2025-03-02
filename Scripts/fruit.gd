@@ -11,6 +11,7 @@ func _ready() -> void:
 	super()
 
 func slice_fx() -> void:
+	# Spawn fruit slices
 	if get_parent().slices:
 		var eject_vector = Vector2(randf_range(100, 300), randf_range(100, 300))
 		for i in 2:
@@ -24,7 +25,9 @@ func slice_fx() -> void:
 			slice.apply_impulse(eject_vector)
 			get_parent().add_child(slice)
 			eject_vector *= -1
-	
+	# Spawn splat particles
 	if get_parent().splats:
 		# TODO: spawn splat particles, possible also static sprite
 		pass
+	# Remove the fruit object
+	self.queue_free()

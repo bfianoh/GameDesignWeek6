@@ -21,6 +21,9 @@ func _process(delta) -> void:
 	if position.y > 460:
 		missed.emit()
 		self.queue_free()
+	if abs(position.x) > 450:
+		var factor = (abs(position.x) - 450) / 50
+		apply_force(Vector2(factor * -linear_velocity.x, 0))
 
 # Called when this scene is sliced
 func slice_fx() -> void:
@@ -36,4 +39,3 @@ func _on_mouse_entered() -> void:
 	if mouse_speed > 0:
 		sliced.emit()
 		slice_fx()
-		self.queue_free()
