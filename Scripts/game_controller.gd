@@ -34,6 +34,12 @@ func set_lives(val) -> void:
 	lives = val
 	$LivesDisplay.text = "❤️".repeat(max(val, 0))
 
+# Called whenever any event fires
+func _unhandled_input(event) -> void:
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_R:
+			get_tree().reload_current_scene()
+
 # Recieves the sliced signal from the fruits
 func _on_fruit_sliced() -> void:
 	points += 1

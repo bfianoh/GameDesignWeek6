@@ -4,9 +4,11 @@ extends "res://Scripts/launchable.gd"
 var particle_scene: PackedScene
 var particle_colors: Array = [Color("ffdd00"), Color("eb8600"), Color("eb5700")]
 
+# Called when this bomb is sliced
 func slice_fx() -> void:
 	self.queue_free()
 
+# Spawn smoke particles on the fuse
 func _on_timer_timeout() -> void:
 	if get_parent().particles:
 		var particle = particle_scene.instantiate()

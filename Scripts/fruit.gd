@@ -16,6 +16,7 @@ func _ready() -> void:
 	$Sprite2D.frame = fruit_type
 	super()
 
+# Called when this fruit is sliced
 func slice_fx() -> void:
 	# Spawn fruit slices
 	if get_parent().slices:
