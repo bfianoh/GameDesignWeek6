@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj74che7ehbc5"]
+[gd_scene load_steps=6 format=3 uid="uid://bj74che7ehbc5"]
 
 [ext_resource type="PackedScene" uid="uid://eh0pkgt2drw5" path="res://Scenes/launchable.tscn" id="1_67yk4"]
 [ext_resource type="Script" path="res://Scripts/bomb.gd" id="2_si45h"]
 [ext_resource type="Texture2D" uid="uid://q3i1cyxmcc6v" path="res://Assets/bomb.png" id="3_ipyt1"]
+[ext_resource type="PackedScene" uid="uid://dt4xiwmheggpx" path="res://Scenes/particle.tscn" id="3_ooppp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ytjuq"]
 radius = 7.0
@@ -10,9 +11,19 @@ radius = 7.0
 [node name="Bomb" instance=ExtResource("1_67yk4")]
 z_index = 2
 script = ExtResource("2_si45h")
+particle_scene = ExtResource("3_ooppp")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_ytjuq")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_ipyt1")
+
+[node name="SparkPos" type="Marker2D" parent="." index="2"]
+position = Vector2(38, -46)
+
+[node name="Timer" type="Timer" parent="." index="3"]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

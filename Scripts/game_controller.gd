@@ -11,7 +11,7 @@ var wave_sizes: Array = [1, 1, 2, 2, 2, 3, 3, 3, 4]
 
 var sounds: bool = false
 var slices: bool = false
-var splats: bool = false
+var particles: bool = false
 var blade: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -72,7 +72,7 @@ func _on_sound_toggle_toggled(toggled_on: bool) -> void:
 	sounds = toggled_on
 func _on_slice_toggle_toggled(toggled_on: bool) -> void:
 	slices = toggled_on
-func _on_splat_toggle_toggled(toggled_on: bool) -> void:
-	splats = toggled_on
+func _on_particle_toggle_toggled(toggled_on: bool) -> void:
+	particles = toggled_on
 func _on_blade_toggle_toggled(toggled_on: bool) -> void:
 	blade = toggled_on

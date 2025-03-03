@@ -129,7 +129,7 @@ theme_override_font_sizes/font_size = 24
 text = "Fruit Slices"
 horizontal_alignment = 1
 
-[node name="SplatToggle" type="TextureButton" parent="ToggleBar"]
+[node name="ParticleToggle" type="TextureButton" parent="ToggleBar"]
 offset_left = 582.0
 offset_top = 7.0
 offset_right = 646.0
@@ -139,7 +139,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
-[node name="Label" type="Label" parent="ToggleBar/SplatToggle"]
+[node name="Label" type="Label" parent="ToggleBar/ParticleToggle"]
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -147,7 +147,7 @@ offset_bottom = 35.8605
 scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
 theme_override_font_sizes/font_size = 24
-text = "Splat Effects"
+text = "Particles"
 horizontal_alignment = 1
 
 [node name="BladeToggle" type="TextureButton" parent="ToggleBar"]
@@ -183,5 +183,5 @@ mouse_filter = 2
 [connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
 [connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/SliceToggle" to="." method="_on_slice_toggle_toggled"]
-[connection signal="toggled" from="ToggleBar/SplatToggle" to="." method="_on_splat_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/ParticleToggle" to="." method="_on_particle_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/BladeToggle" to="." method="_on_blade_toggle_toggled"]

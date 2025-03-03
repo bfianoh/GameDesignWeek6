@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c715svdpoba5g"]
+[gd_scene load_steps=6 format=3 uid="uid://c715svdpoba5g"]
 
 [ext_resource type="PackedScene" uid="uid://eh0pkgt2drw5" path="res://Scenes/launchable.tscn" id="1_xd4u2"]
 [ext_resource type="Texture2D" uid="uid://ucw5aki3ojox" path="res://Assets/fruits.png" id="2_kgvd7"]
 [ext_resource type="Script" path="res://Scripts/fruit.gd" id="2_ughab"]
 [ext_resource type="PackedScene" uid="uid://kfp8u0hn14a6" path="res://Scenes/fruit_slice.tscn" id="3_cosqa"]
+[ext_resource type="PackedScene" uid="uid://dt4xiwmheggpx" path="res://Scenes/particle.tscn" id="4_85qne"]
 
 [node name="Fruit" groups=["Fruits"] instance=ExtResource("1_xd4u2")]
 z_index = 1
 script = ExtResource("2_ughab")
 slice_scene = ExtResource("3_cosqa")
+particle_scene = ExtResource("4_85qne")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_kgvd7")
