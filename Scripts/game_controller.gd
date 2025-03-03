@@ -42,16 +42,19 @@ func _unhandled_input(event) -> void:
 
 # Recieves the sliced signal from the fruits
 func _on_fruit_sliced() -> void:
+	if sounds: $CutSound.play()
 	points += 1
 	$ScoreDisplay.text = "%03d" % points
 
 # Recieves the missed signal from the fruits
 func _on_fruit_missed() -> void:
+	if sounds: $DropSound.play()
 	set_lives(lives - 1)
 	if lives == 0: game_over()
 
 # Recieves the sliced signal from the bombs
 func _on_bomb_sliced() -> void:
+	if sounds: $BombSound.play()
 	$Explosion.modulate.a = 1
 	get_tree().call_group("Fruits","slice_fx")
 	set_lives(0)
@@ -72,6 +75,8 @@ func _on_fruit_timer_timeout() -> void:
 			fruit.sliced.connect(_on_fruit_sliced)
 			fruit.missed.connect(_on_fruit_missed)
 			add_child(fruit)
+		if sounds: $LaunchSound.play()
+		await get_tree().create_timer(randf_range(0.09, 0.11)).timeout
 
 # Recievers for the toggle buttons
 func _on_sound_toggle_toggled(toggled_on: bool) -> void:
