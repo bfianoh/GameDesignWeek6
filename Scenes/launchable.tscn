@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://eh0pkgt2drw5"]
 
-[ext_resource type="Script" path="res://Scripts/launchable.gd" id="1_g6puy"]
+[ext_resource type="Script" uid="uid://daapbhoyj7vw" path="res://Scripts/launchable.gd" id="1_g6puy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnn7w"]
 radius = 9.0
