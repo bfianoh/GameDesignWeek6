@@ -16,7 +16,7 @@ func _ready() -> void:
 	self.apply_impulse(launch_vector*launch_force*randf_range(0.9, 1.1), offset)
 
 # Called every frame
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	mouse_speed = 0
 	if position.y > 460:
 		missed.emit()

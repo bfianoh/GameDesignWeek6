@@ -41,8 +41,8 @@ func slice_fx() -> void:
 			particle.motion = direction*8
 			particle.rotation = randf_range(0, 2*PI)
 			particle.modulate = particle_colors[fruit_type]
-			var scale = randf_range(20, 28)
-			particle.scale = Vector2(scale, scale)
+			var size = randf_range(20, 28)
+			particle.scale = Vector2(size, size)
 			get_parent().add_child(particle)
 	# Remove the fruit object
 	self.queue_free()
