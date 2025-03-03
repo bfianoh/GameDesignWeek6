@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ban64dkuwdcxw"]
+[gd_scene load_steps=11 format=3 uid="uid://ban64dkuwdcxw"]
 
 [ext_resource type="Texture2D" uid="uid://c8kx0faqe0kxh" path="res://Assets/woodBig.png" id="1_8jo0f"]
 [ext_resource type="Script" path="res://Scripts/game_controller.gd" id="1_rwrkb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bj74che7ehbc5" path="res://Scenes/bomb.tscn" id="3_sm6m7"]
 [ext_resource type="Texture2D" uid="uid://cbjidhspf6ll0" path="res://Assets/toggle.png" id="5_eqbh1"]
 [ext_resource type="Script" path="res://Scripts/blade_trail.gd" id="6_55r3k"]
+[ext_resource type="Texture2D" uid="uid://da1cmaomhusf7" path="res://Assets/blade.png" id="6_p73yt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnqrc"]
 atlas = ExtResource("5_eqbh1")
@@ -93,6 +94,7 @@ offset_bottom = 466.0
 color = Color(0.76, 0.623833, 0.4332, 1)
 
 [node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 72.0
@@ -103,6 +105,7 @@ texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
 [node name="Label" type="Label" parent="ToggleBar/SoundToggle"]
+layout_mode = 0
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -114,6 +117,7 @@ text = "Sound Effects"
 horizontal_alignment = 1
 
 [node name="SliceToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
 offset_left = 295.0
 offset_top = 7.0
 offset_right = 359.0
@@ -124,6 +128,7 @@ texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
 [node name="Label" type="Label" parent="ToggleBar/SliceToggle"]
+layout_mode = 0
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -135,6 +140,7 @@ text = "Fruit Slices"
 horizontal_alignment = 1
 
 [node name="ParticleToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
 offset_left = 582.0
 offset_top = 7.0
 offset_right = 646.0
@@ -145,6 +151,7 @@ texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
 [node name="Label" type="Label" parent="ToggleBar/ParticleToggle"]
+layout_mode = 0
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -156,6 +163,7 @@ text = "Particles"
 horizontal_alignment = 1
 
 [node name="BladeToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
 offset_left = 869.0
 offset_top = 7.0
 offset_right = 933.0
@@ -166,6 +174,7 @@ texture_normal = SubResource("AtlasTexture_lnqrc")
 texture_pressed = SubResource("AtlasTexture_n3t4x")
 
 [node name="Label" type="Label" parent="ToggleBar/BladeToggle"]
+layout_mode = 0
 offset_left = 5.81395
 offset_top = 1.86047
 offset_right = 162.814
@@ -188,6 +197,8 @@ mouse_filter = 2
 [node name="BladeTrail" type="Line2D" parent="."]
 width = 25.0
 width_curve = SubResource("Curve_qbb84")
+texture = ExtResource("6_p73yt")
+texture_mode = 2
 script = ExtResource("6_55r3k")
 trail_length = 10
 
