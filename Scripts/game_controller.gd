@@ -74,7 +74,9 @@ func _on_bomb_sliced() -> void:
 
 # Receives the timeout signal from the FruitTimer
 func _on_fruit_timer_timeout() -> void:
-	for i in wave_sizes.pick_random():
+	var wave_size = wave_sizes.pick_random()
+	if points < 5 and wave_size > 1: wave_size -= 1
+	for i in wave_size:
 		var spawn_pos = Vector2(randf_range(-420,420), 450)
 		if randf() < 0.15:
 			var bomb = bomb_scene.instantiate()
