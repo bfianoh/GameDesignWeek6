@@ -116,34 +116,11 @@ offset_right = 576.0
 offset_bottom = 466.0
 color = Color(0.76, 0.623833, 0.4332, 1)
 
-[node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
+[node name="SliceToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 72.0
-offset_bottom = 23.0
-scale = Vector2(4.3, 4.3)
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_lnqrc")
-texture_pressed = SubResource("AtlasTexture_n3t4x")
-
-[node name="Label" type="Label" parent="ToggleBar/SoundToggle"]
-layout_mode = 0
-offset_left = 5.81395
-offset_top = 1.86047
-offset_right = 162.814
-offset_bottom = 35.8605
-scale = Vector2(0.33, 0.33)
-theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
-theme_override_font_sizes/font_size = 24
-text = "Sound Effects"
-horizontal_alignment = 1
-
-[node name="SliceToggle" type="TextureButton" parent="ToggleBar"]
-layout_mode = 0
-offset_left = 295.0
-offset_top = 7.0
-offset_right = 359.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
@@ -164,9 +141,9 @@ horizontal_alignment = 1
 
 [node name="ParticleToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
-offset_left = 582.0
+offset_left = 295.0
 offset_top = 7.0
-offset_right = 646.0
+offset_right = 359.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
@@ -183,6 +160,29 @@ scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
 theme_override_font_sizes/font_size = 24
 text = "Particles"
+horizontal_alignment = 1
+
+[node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 7.0
+offset_right = 646.0
+offset_bottom = 23.0
+scale = Vector2(4.3, 4.3)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_lnqrc")
+texture_pressed = SubResource("AtlasTexture_n3t4x")
+
+[node name="Label" type="Label" parent="ToggleBar/SoundToggle"]
+layout_mode = 0
+offset_left = 5.81395
+offset_top = 1.86047
+offset_right = 162.814
+offset_bottom = 35.8605
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
+theme_override_font_sizes/font_size = 24
+text = "Sound Effects"
 horizontal_alignment = 1
 
 [node name="BladeToggle" type="TextureButton" parent="ToggleBar"]
@@ -242,7 +242,7 @@ stream = SubResource("AudioStreamRandomizer_6c46p")
 volume_db = -6.0
 
 [connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
-[connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/SliceToggle" to="." method="_on_slice_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/ParticleToggle" to="." method="_on_particle_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/BladeToggle" to="." method="_on_blade_toggle_toggled"]

@@ -40,13 +40,13 @@ func _unhandled_input(event) -> void:
 		if event.keycode == KEY_R:
 			get_tree().reload_current_scene()
 		if event.keycode == KEY_1:
-			var toggle = $ToggleBar/SoundToggle
-			toggle.button_pressed = !toggle.button_pressed
-		if event.keycode == KEY_2:
 			var toggle = $ToggleBar/SliceToggle
 			toggle.button_pressed = !toggle.button_pressed
-		if event.keycode == KEY_3:
+		if event.keycode == KEY_2:
 			var toggle = $ToggleBar/ParticleToggle
+			toggle.button_pressed = !toggle.button_pressed
+		if event.keycode == KEY_3:
+			var toggle = $ToggleBar/SoundToggle
 			toggle.button_pressed = !toggle.button_pressed
 		if event.keycode == KEY_4:
 			var toggle = $ToggleBar/BladeToggle
