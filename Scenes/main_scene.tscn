@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ban64dkuwdcxw"]
+[gd_scene load_steps=20 format=3 uid="uid://ban64dkuwdcxw"]
 
 [ext_resource type="Texture2D" uid="uid://c8kx0faqe0kxh" path="res://Assets/woodBig.png" id="1_8jo0f"]
 [ext_resource type="Script" uid="uid://s0772lho5mvw" path="res://Scripts/game_controller.gd" id="1_rwrkb"]
 [ext_resource type="PackedScene" uid="uid://c715svdpoba5g" path="res://Scenes/fruit.tscn" id="2_7jbdv"]
 [ext_resource type="PackedScene" uid="uid://bj74che7ehbc5" path="res://Scenes/bomb.tscn" id="3_sm6m7"]
+[ext_resource type="FontFile" uid="uid://dsxh3e64nnbtv" path="res://Assets/seguiemj.ttf" id="5_7ewk0"]
 [ext_resource type="Texture2D" uid="uid://cbjidhspf6ll0" path="res://Assets/toggle.png" id="5_eqbh1"]
 [ext_resource type="Script" uid="uid://bncbqdqmv07ro" path="res://Scripts/blade_trail.gd" id="6_55r3k"]
 [ext_resource type="Texture2D" uid="uid://da1cmaomhusf7" path="res://Assets/blade.png" id="6_p73yt"]
@@ -72,21 +73,23 @@ text = "000"
 [node name="ScoreIcon" type="Label" parent="ScoreDisplay"]
 layout_mode = 0
 offset_left = -101.0
-offset_top = 13.0
+offset_top = 29.0
 offset_right = 2.0
-offset_bottom = 116.0
+offset_bottom = 132.0
 theme_override_colors/font_color = Color(1, 0.733333, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("5_7ewk0")
 theme_override_font_sizes/font_size = 75
 text = "🍉"
 
 [node name="LivesDisplay" type="Label" parent="."]
 z_index = 10
-offset_left = 265.0
-offset_top = -359.0
-offset_right = 574.0
-offset_bottom = -235.0
+offset_left = 255.0
+offset_top = -352.0
+offset_right = 564.0
+offset_bottom = -228.0
+theme_override_fonts/font = ExtResource("5_7ewk0")
 theme_override_font_sizes/font_size = 75
 text = "❤️❤️❤️"
 horizontal_alignment = 2
