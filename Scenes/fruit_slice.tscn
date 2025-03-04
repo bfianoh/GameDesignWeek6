@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://be8hwn5jlxoft" path="res://Scripts/fruit_slice.gd" id="1_wpno8"]
 
 [node name="FruitSlice" type="RigidBody2D"]
+z_index = 1
 gravity_scale = 3.0
 script = ExtResource("1_wpno8")
 

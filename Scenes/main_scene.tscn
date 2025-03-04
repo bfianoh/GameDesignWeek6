@@ -15,13 +15,13 @@
 [ext_resource type="AudioStream" uid="uid://dpsquvq8ht6db" path="res://Assets/drop.wav" id="12_2fenh"]
 [ext_resource type="AudioStream" uid="uid://bdwkr3sscouma" path="res://Assets/launch.wav" id="13_js8fc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnqrc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ewk0"]
 atlas = ExtResource("5_eqbh1")
-region = Rect2(0, 0, 64, 16)
+region = Rect2(0, 0, 50, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n3t4x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhp3t"]
 atlas = ExtResource("5_eqbh1")
-region = Rect2(0, 16, 64, 16)
+region = Rect2(0, 16, 50, 16)
 
 [sub_resource type="Curve" id="Curve_qbb84"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.874016, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -118,43 +118,43 @@ color = Color(0.76, 0.623833, 0.4332, 1)
 
 [node name="SliceToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 11.0
 offset_top = 7.0
-offset_right = 72.0
+offset_right = 61.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_lnqrc")
-texture_pressed = SubResource("AtlasTexture_n3t4x")
+texture_normal = SubResource("AtlasTexture_7ewk0")
+texture_pressed = SubResource("AtlasTexture_lhp3t")
 
 [node name="Label" type="Label" parent="ToggleBar/SliceToggle"]
 layout_mode = 0
-offset_left = 5.81395
-offset_top = 1.86047
-offset_right = 162.814
+offset_left = 5.34883
+offset_top = 1.86046
+offset_right = 124.349
 offset_bottom = 35.8605
 scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
 theme_override_font_sizes/font_size = 24
-text = "Fruit Slices"
+text = "Slices"
 horizontal_alignment = 1
 
 [node name="ParticleToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
-offset_left = 295.0
+offset_left = 240.0
 offset_top = 7.0
-offset_right = 359.0
+offset_right = 290.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_lnqrc")
-texture_pressed = SubResource("AtlasTexture_n3t4x")
+texture_normal = SubResource("AtlasTexture_7ewk0")
+texture_pressed = SubResource("AtlasTexture_lhp3t")
 
 [node name="Label" type="Label" parent="ToggleBar/ParticleToggle"]
 layout_mode = 0
-offset_left = 5.81395
-offset_top = 1.86047
-offset_right = 162.814
+offset_left = 5.34883
+offset_top = 1.86046
+offset_right = 124.349
 offset_bottom = 35.8605
 scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
@@ -162,50 +162,74 @@ theme_override_font_sizes/font_size = 24
 text = "Particles"
 horizontal_alignment = 1
 
-[node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
+[node name="SplatToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
-offset_left = 582.0
+offset_left = 469.0
 offset_top = 7.0
-offset_right = 646.0
+offset_right = 519.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_lnqrc")
-texture_pressed = SubResource("AtlasTexture_n3t4x")
+texture_normal = SubResource("AtlasTexture_7ewk0")
+texture_pressed = SubResource("AtlasTexture_lhp3t")
+
+[node name="Label" type="Label" parent="ToggleBar/SplatToggle"]
+layout_mode = 0
+offset_left = 5.34883
+offset_top = 1.86046
+offset_right = 124.349
+offset_bottom = 72.8605
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
+theme_override_font_sizes/font_size = 24
+text = "Splats
+"
+horizontal_alignment = 1
+
+[node name="SoundToggle" type="TextureButton" parent="ToggleBar"]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 7.0
+offset_right = 748.0
+offset_bottom = 23.0
+scale = Vector2(4.3, 4.3)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_7ewk0")
+texture_pressed = SubResource("AtlasTexture_lhp3t")
 
 [node name="Label" type="Label" parent="ToggleBar/SoundToggle"]
 layout_mode = 0
-offset_left = 5.81395
-offset_top = 1.86047
-offset_right = 162.814
+offset_left = 5.34883
+offset_top = 1.86046
+offset_right = 124.349
 offset_bottom = 35.8605
 scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
 theme_override_font_sizes/font_size = 24
-text = "Sound Effects"
+text = "Sounds"
 horizontal_alignment = 1
 
 [node name="BladeToggle" type="TextureButton" parent="ToggleBar"]
 layout_mode = 0
-offset_left = 869.0
+offset_left = 927.0
 offset_top = 7.0
-offset_right = 933.0
+offset_right = 977.0
 offset_bottom = 23.0
 scale = Vector2(4.3, 4.3)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_lnqrc")
-texture_pressed = SubResource("AtlasTexture_n3t4x")
+texture_normal = SubResource("AtlasTexture_7ewk0")
+texture_pressed = SubResource("AtlasTexture_lhp3t")
 
 [node name="Label" type="Label" parent="ToggleBar/BladeToggle"]
 layout_mode = 0
-offset_left = 5.81395
-offset_top = 1.86047
-offset_right = 162.814
+offset_left = 5.34883
+offset_top = 1.86046
+offset_right = 124.349
 offset_bottom = 35.8605
 scale = Vector2(0.33, 0.33)
 theme_override_colors/font_color = Color(0.3696, 0.38016, 0.44, 1)
 theme_override_font_sizes/font_size = 24
-text = "Blade Trail"
+text = "Blade"
 horizontal_alignment = 1
 
 [node name="Explosion" type="ColorRect" parent="."]
@@ -244,5 +268,6 @@ volume_db = -6.0
 [connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
 [connection signal="toggled" from="ToggleBar/SliceToggle" to="." method="_on_slice_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/ParticleToggle" to="." method="_on_particle_toggle_toggled"]
+[connection signal="toggled" from="ToggleBar/SplatToggle" to="." method="_on_splat_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="toggled" from="ToggleBar/BladeToggle" to="." method="_on_blade_toggle_toggled"]

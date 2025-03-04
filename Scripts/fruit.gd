@@ -2,11 +2,13 @@ extends "res://Scripts/launchable.gd"
 
 @export
 var slice_scene: PackedScene
+@export
+var splat_scene: PackedScene
 @export 
 var particle_scene: PackedScene
 var particle_colors: Array = [
-	Color("fff2a1"), Color("fff2a1"), Color("ff8933"), Color("b0d444"), Color("ffe854"), 
-	Color("c8d45d"), Color("dfe0e8"), Color("dfe0e8"), Color("c8d45d"), Color("ff5277")
+	Color("fff2a1"), Color("fff2a1"), Color("ff8500"), Color("99e442"), Color("ffe538"), 
+	Color("c5d43d"), Color("dfe0e8"), Color("dfe0e8"), Color("bfcc47"), Color("ff5277")
 ]
 var fruit_type: int
 
@@ -32,7 +34,13 @@ func slice_fx() -> void:
 			slice.apply_impulse(eject_vector)
 			get_parent().add_child(slice)
 			eject_vector *= -1
-	# Spawn splat particles
+	# Spawn splat effect
+	if get_parent().splats:
+		var splat = splat_scene.instantiate()
+		splat.position = position
+		splat.modulate = particle_colors[fruit_type]
+		get_parent().add_child(splat)
+	# Spawn juice particles
 	if get_parent().particles:
 		for i in 20:
 			var particle = particle_scene.instantiate()
@@ -41,7 +49,7 @@ func slice_fx() -> void:
 			particle.motion = direction*8
 			particle.rotation = randf_range(0, 2*PI)
 			particle.modulate = particle_colors[fruit_type]
-			var size = randf_range(20, 28)
+			var size = randf_range(24, 30)
 			particle.scale = Vector2(size, size)
 			get_parent().add_child(particle)
 	# Remove the fruit object

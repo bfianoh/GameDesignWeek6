@@ -9,9 +9,10 @@ var lives: int = 3
 var points: int = 0
 var wave_sizes: Array = [1, 1, 2, 2, 2, 3, 3, 3, 4]
 
-var sounds: bool = false
 var slices: bool = false
+var splats: bool = false
 var particles: bool = false
+var sounds: bool = false
 var blade: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -46,9 +47,12 @@ func _unhandled_input(event) -> void:
 			var toggle = $ToggleBar/ParticleToggle
 			toggle.button_pressed = !toggle.button_pressed
 		if event.keycode == KEY_3:
-			var toggle = $ToggleBar/SoundToggle
+			var toggle = $ToggleBar/SplatToggle
 			toggle.button_pressed = !toggle.button_pressed
 		if event.keycode == KEY_4:
+			var toggle = $ToggleBar/SoundToggle
+			toggle.button_pressed = !toggle.button_pressed
+		if event.keycode == KEY_5:
 			var toggle = $ToggleBar/BladeToggle
 			toggle.button_pressed = !toggle.button_pressed
 
@@ -93,11 +97,13 @@ func _on_fruit_timer_timeout() -> void:
 		await get_tree().create_timer(randf_range(0.09, 0.11)).timeout
 
 # Recievers for the toggle buttons
-func _on_sound_toggle_toggled(toggled_on: bool) -> void:
-	sounds = toggled_on
 func _on_slice_toggle_toggled(toggled_on: bool) -> void:
 	slices = toggled_on
 func _on_particle_toggle_toggled(toggled_on: bool) -> void:
 	particles = toggled_on
+func _on_splat_toggle_toggled(toggled_on: bool) -> void:
+	splats = toggled_on
+func _on_sound_toggle_toggled(toggled_on: bool) -> void:
+	sounds = toggled_on
 func _on_blade_toggle_toggled(toggled_on: bool) -> void:
 	blade = toggled_on

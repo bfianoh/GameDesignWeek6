@@ -4,6 +4,6 @@
 [ext_resource type="Script" uid="uid://b5y3vxeylh67e" path="res://Scripts/particle.gd" id="2_1t7x1"]
 
 [node name="Particle" type="Sprite2D"]
-z_index = 3
+z_index = 4
 texture = ExtResource("1_4jnh0")
 script = ExtResource("2_1t7x1")
